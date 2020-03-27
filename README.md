@@ -9,6 +9,10 @@ Setting up billing alerts: ![](images/billingAlerts.png)
 Configuring IAM user for personal use: ![](images/iamUser.png)
 
 
-Deploy an EC2 instance & configure it as a web server to host a static web page: ![](images/ec2Instance.png)
+Deploy an EC2 instance & configure it as a web server to host a web page: ![](images/ec2Instance.png)
+![](images/instanceLaunch.png)
 
+Now with the EC2 instance launched, I am going to use it to host a simple web page that I created:
+
+To accomplish this, I started out by connecting to the EC2 instance and issuing an update (sudo yum update). Next, I installed an HTTP server (sudo yum install httpd -y). Once this was installed, I created an index.html file (touch index.html) within /var/www/html (cd /var/www/html) and edited the file with nano (sudo nano index.html). After putting the HTML code in the file, I started the httpd service with (service httpd start). The result is a working webpage hosted on Amazon EC2: ![](images/ec2Webpage.png)
 
