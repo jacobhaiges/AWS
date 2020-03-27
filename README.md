@@ -22,3 +22,10 @@ The snapshot was created successfully, now to launch the EC2 instance using the 
 
 Let's verify that the snapshot works and we have the webpage installed: ![](images/snapshotVerify.png)
 
+Creating an AMI using that EC2 instance: ![](images/ec2AMI.png)
+
+Putting that AMI in an autoscaling group so that one VM always exists: ![](images/autoscaleGroup.png)
+
+Let's verify that the autoscaling group is working: ![](images/autoscaleVerify.png)
+
+Next, creating an Elastic Load Balancer 
