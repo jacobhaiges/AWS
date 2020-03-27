@@ -28,4 +28,4 @@ Putting that AMI in an autoscaling group so that one VM always exists: ![](image
 
 Let's verify that the autoscaling group is working: ![](images/autoscaleVerify.png)
 
-Next, creating an Elastic Load Balancer 
+Next, creating an Elastic Load Balancer to load balance between two availability zones: ![](images/ec2ALB.png)
