@@ -29,3 +29,9 @@ Putting that AMI in an autoscaling group so that one VM always exists: ![](image
 Let's verify that the autoscaling group is working: ![](images/autoscaleVerify.png)
 
 Next, creating an Elastic Load Balancer to load balance between two availability zones: ![](images/ec2ALB.png)
+
+Let's verify that the Application Load Balancer is load balancing across two availability zones: ![](images/albVerify.png)
+
+In addition, let's verify that we can connect to the Application Load Balancer and it is hosting our web page: ![](images/albWorking.png)
+
+
