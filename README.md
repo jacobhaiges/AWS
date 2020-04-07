@@ -35,3 +35,6 @@ Let's verify that the Application Load Balancer is load balancing across two ava
 In addition, let's verify that we can connect to the Application Load Balancer and it is hosting our web page: ![](images/albWorking.png)
 
 
+
+
+
