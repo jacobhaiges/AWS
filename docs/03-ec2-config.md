@@ -319,3 +319,78 @@ Starting the httpd (web server) service:
 sudo service httpd start
 ```
 Switching over to Google Chrome and seeing if I can connect to the web page: ![](images/ec2-web-server-page.png)
+
+# Creating a Snapshot of EC2 instance
+To list all of the volumes in the current region:
+```
+aws ec2 describe-volumes
+```
+Output:
+```
+Volumes:
+- Attachments:
+  - AttachTime: '2020-05-25T00:05:16+00:00'
+    DeleteOnTermination: true
+    Device: /dev/xvda
+    InstanceId: i-*****
+    State: attached
+    VolumeId: vol-*****
+  AvailabilityZone: us-east-2c
+  CreateTime: '2020-05-25T00:05:16.913000+00:00'
+  Encrypted: false
+  Iops: 100
+  Size: 8
+  SnapshotId: snap-*****
+  State: in-use
+  VolumeId: vol-*****
+  VolumeType: gp2
+```
+Creating a snapshot using the volume-id from the previous command:
+```
+aws ec2 create-snapshot --volume-id vol-***** --description "Web server volume snapshot"
+```
+Output:
+```
+Description: Web server volume snapshot
+Encrypted: false
+OwnerId: '847252828714'
+Progress: ''
+SnapshotId: snap-0e4d03f1d4c4ed29d
+StartTime: '2020-05-25T18:03:56+00:00'
+State: pending
+Tags: []
+VolumeId: vol-0e81d69564657bf53
+VolumeSize: 8
+```
+Verifying that the snapshot has been created: ![](../images/ws-snapshot.png)
+
+# Creating an AMI
+I'm going to create an AMI using the web server EC2 instance. To create an AMI:
+```
+aws ec2 create-image --instance-id i-***** --name "Web server" --description "An AMI for my web server"
+```
+Output:
+```
+ImageId: ami-*****
+```
+
+Verifying that the AMI has been created: ![](../images/ws-ami.png)
+
+To get the instance-id to run this command, use:
+```
+aws ec2 describe-instances --filters Name=instance-type,Values=t2.micro
+```
+You can change the t2.micro part depending on which instance type you are using.
+Output (trimmed for space):
+```
+
+    InstanceId: i-08ae9bb1c7cf5887b
+    InstanceType: t2.micro
+```
+
+# Creating an Autoscaling Group
+To create an auto scaling group:
+```
+aws autoscaling create-auto-scaling-group --auto-scaling-group-name my-asg --instance-id i-***** --min-size 1 --max-size 3 --vpc-zone-identifier "subnet-*****" --tags "ResourceId=my-asg,ResourceType=auto-scaling-group,Key=Role,Value=WebServer,PropagateAtLaunch=true"
+```
+There is no output on the command line, but it has been created. Verifying that the auto scaling group has been created: ![](../images/ws-auto-scaling-group.png)
