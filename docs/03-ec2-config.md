@@ -181,7 +181,7 @@ Instances:
 OwnerId: '*****'
 ReservationId: r-*****
 ```
-Verifing that an EC2 instance is launched by checking the AWS console: ![](images/verify-ec2-launch.png)
+Verifing that an EC2 instance is launched by checking the AWS console: ![](../images/verify-ec2-launch.png)
 
 Additionally, you can list your ec2 instances to see if it actually launched:
 ```
@@ -229,7 +229,7 @@ Editing the index.html file using vim:
 ```
 vim index.html
 ```
-I created a sample [index.html](index.html) file for this project:
+I created a sample [index.html](../index.html) file for this project:
 ```
 <!doctype html>
 <html lang="en">
@@ -318,4 +318,4 @@ Starting the httpd (web server) service:
 ```
 sudo service httpd start
 ```
-Switching over to Google Chrome and seeing if I can connect to the web page: ![](images/ec2-web-server-page.png)
+Switching over to Google Chrome and seeing if I can connect to the web page: ![](../images/ec2-web-server-page.png)
