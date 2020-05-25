@@ -353,13 +353,13 @@ Output:
 ```
 Description: Web server volume snapshot
 Encrypted: false
-OwnerId: '847252828714'
+OwnerId: '*****'
 Progress: ''
-SnapshotId: snap-0e4d03f1d4c4ed29d
+SnapshotId: snap-*****
 StartTime: '2020-05-25T18:03:56+00:00'
 State: pending
 Tags: []
-VolumeId: vol-0e81d69564657bf53
+VolumeId: vol-*****
 VolumeSize: 8
 ```
 Verifying that the snapshot has been created: ![](../images/ws-snapshot.png)
@@ -384,7 +384,7 @@ You can change the t2.micro part depending on which instance type you are using.
 Output (trimmed for space):
 ```
 
-    InstanceId: i-08ae9bb1c7cf5887b
+    InstanceId: i-*****
     InstanceType: t2.micro
 ```
 
