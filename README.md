@@ -1,6 +1,15 @@
 # AWS
-Learning AWS through various projects
+
+The goal of this project is to learn AWS and configure some services (IAM, EC2, ALB, etc.)
 ---------------------------------------
+
+# Labs
+
+* [Setup](docs/01-prerequisites.md)
+* [IAM Configuration](docs/02-iam-config.md)
+* [EC2 Configuration](docs/03-ec2-config.md)
+* [Setting up EC2 with a Load Balancer](docs/04-ec2-with-alb.md)
+
 
 
 Setting up billing alerts: ![](images/billingAlerts.png)
@@ -33,8 +42,3 @@ Next, creating an Elastic Load Balancer to load balance between two availability
 Verifying that the Application Load Balancer is load balancing across two availability zones: ![](images/albVerify.png)
 
 Verifying that I can connect to the Application Load Balancer and it is hosting the web page: ![](images/albWorking.png)
-
-
-
-
-
