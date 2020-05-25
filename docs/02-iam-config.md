@@ -19,7 +19,7 @@ Configuring billing alerts is very important to make sure that you don't acciden
 ```
  aws budgets create-budget --account-id ***** --budget file://budget.json --notifications-with-subscribers file://notifications-with-subscribers.json
  ```
- The files for [budget.json](budgets.json) and [notifications-for-subscribers](notifications-for-subscribers) that I used are linked.
+ The files for [budget.json](../budget.json) and [notifications-for-subscribers](../notifications-with-subscribers.json) that I used are linked.
  Verifying that the budget alert was created by checking the AWS console: ![](images/aws-billing-alert.png)
 
 # Creating Access Keys through CLI
